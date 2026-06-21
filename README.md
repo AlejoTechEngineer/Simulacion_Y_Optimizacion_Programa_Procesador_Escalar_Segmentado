@@ -19,6 +19,22 @@ Proyecto de desarrollo propio realizado por **Alejandro De Mendoza** como parte 
 
 ---
 
+## Arquitectura
+
+```mermaid
+flowchart TD
+    A[Scripts/ - Programa en Assembler MIPS] --> B[MARS 4.5 Simulator - Mars4_5.jar]
+    B --> C[Procesador Escalar Segmentado - Pipeline]
+    C --> D[Etapa IF - Instruction Fetch]
+    C --> E[Etapa ID - Instruction Decode]
+    C --> F[Etapa EX - Execute / ALU]
+    C --> G[Etapa MEM - Memory Access]
+    C --> H[Etapa WB - Write Back]
+    D --> E --> F --> G --> H
+    H --> I[Analisis de Hazards - datos / control / estructurales]
+    I --> J[Optimizacion del pipeline - Reduccion de ciclos de penalizacion]
+```
+
 ## Autor
 
 **Alejandro De Mendoza**  
